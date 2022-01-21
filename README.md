@@ -10,6 +10,45 @@ pip install -r requirements.txt
 ```
 
 ### Usage
+#### Start server
 ```sh
 make up
+```
+#### Create Maze
+```sh
+curl --request POST 'localhost:5005/mazes' --header 'Content-Type: application/json' --data-raw '[3, 1, [2, [5,[4, 3]]], [], [2]]'
+{
+  "content": [
+    3, 
+    1, 
+    [
+      2, 
+      [
+        5, 
+        [
+          4, 
+          3
+        ]
+      ]
+    ], 
+    [], 
+    [
+      2
+    ]
+  ], 
+  "id": 244273
+}
+```
+#### Search Values in Maze
+```sh
+curl --request GET 'localhost:5005/mazes/244273/search?value=2&operator=greater_than_or_equal'                                    
+[
+  3, 
+  2, 
+  5, 
+  4, 
+  3, 
+  2
+]
+
 ```
