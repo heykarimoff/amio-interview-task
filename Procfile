@@ -1,0 +1,1 @@
+web: gunicorn maze.flask_app:app
