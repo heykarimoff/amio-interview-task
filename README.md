@@ -1,8 +1,8 @@
 # Maze python-code
 Example application code for the [Senior Developer - homework](https://docs.google.com/document/d/1ns5vAOxMHLcuoxvqSIRq3WzM4PFYPCe65UUOhHI3flw/edit).
 
+Deployed on Heroku at [https://mazeapi.herokuapp.com](https://mazeapi.herokuapp.com/).
 Visit [API documentation](https://documenter.getpostman.com/view/14594760/UVXonEUP) to see available endpoints.
-
 ### Installation
 Install dependencies:
 ```sh
