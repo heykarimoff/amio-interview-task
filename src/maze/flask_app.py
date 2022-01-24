@@ -18,8 +18,8 @@ def create_maze_endpoint():
     return response
 
 
-@app.route("/mazes/<maze_id>/search", methods=["GET"])
-def search_value_endpoint(maze_id):
+@app.route("/mazes/<maze_id>/values", methods=["GET"])
+def search_values_endpoint(maze_id):
     maze_id = int(maze_id)
 
     if maze_id not in maze_collection.mazes:
