@@ -5,7 +5,15 @@ from random import randint
 
 
 class MazeCollection:
-    OPERATORS = ["equal", "not_equal", "less_than", "greater_than", "less_than_or_equal", "greater_than_or_equal"]
+    OPRETAROR_MAP = {
+        "equals": lambda x, y: x == y,
+        "not_equal": lambda x, y: x != y,
+        "less_than": lambda x, y: x < y,
+        "greater_than": lambda x, y: x > y,
+        "less_than_or_equal": lambda x, y: x <= y,
+        "greater_than_or_equal": lambda x, y: x >= y,
+    }
+    OPERATORS = OPRETAROR_MAP.keys()
 
     def __init__(self):
         self.mazes = {}
@@ -39,17 +47,4 @@ class MazeCollection:
                 yield from self.traverse(item)
 
     def evaluate(self, a, b, operator):
-        if operator == "equal":
-            return a == b
-        elif operator == "not_equal":
-            return a != b
-        elif operator == "less_than":
-            return a < b
-        elif operator == "greater_than":
-            return a > b
-        elif operator == "less_than_or_equal":
-            return a <= b
-        elif operator == "greater_than_or_equal":
-            return a >= b
-        else:
-            return False
+        return self.OPRETAROR_MAP[operator](a, b)
