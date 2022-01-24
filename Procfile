@@ -1,1 +1,1 @@
-web: gunicorn maze.flask_app:app
+web: gunicorn maze.flask_app:app --workers 1 --threads 1 --worker-connections 1
