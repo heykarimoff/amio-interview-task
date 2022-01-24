@@ -5,6 +5,8 @@ from random import randint
 
 
 class MazeCollection:
+    OPERATORS = ["equal", "not_equal", "less_than", "greater_than", "less_than_or_equal", "greater_than_or_equal"]
+
     def __init__(self):
         self.mazes = {}
 

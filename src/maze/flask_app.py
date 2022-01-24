@@ -38,7 +38,7 @@ def search_values_endpoint(maze_id):
     except ValueError:
         return {"error": "invalid value"}, 400
     
-    if operator not in ["equal", "not_equal", "less_than", "greater_than", "less_than_or_equal", "greater_than_or_equal"]:
+    if operator not in maze_collection.OPERATORS:
         return {"error": "invalid operator"}, 400
     
     result = maze_collection.search(maze_id, value, operator)
