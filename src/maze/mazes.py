@@ -9,6 +9,8 @@ class MazeCollection:
         self.mazes = {}
 
     def valid_maze(self, maze):
+        if not isinstance(maze, list):
+            return False
         return True
 
     def generate_maze_id(self):
