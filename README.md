@@ -16,7 +16,7 @@ make up
 ```
 #### Create Maze
 ```sh
-curl --request POST 'localhost:5005/mazes' --header 'Content-Type: application/json' --data-raw '[3, 1, [2, [5,[4, 3]]], [], [2]]'
+curl --request POST 'localhost:5005/v1/mazes' --header 'Content-Type: application/json' --data-raw '[3, 1, [2, [5,[4, 3]]], [], [2]]'
 {
   "content": [
     3, 
@@ -41,7 +41,7 @@ curl --request POST 'localhost:5005/mazes' --header 'Content-Type: application/j
 ```
 #### Search Values in Maze
 ```sh
-curl --request GET 'localhost:5005/mazes/244273/values?value=2&operator=greater_than_or_equal'                                    
+curl --request GET 'localhost:5005/v1/mazes/244273/values?value=2&operator=greater_than_or_equal'                                    
 [
   3, 
   2, 

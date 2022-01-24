@@ -6,7 +6,7 @@ app = Flask(__name__)
 maze_collection = mazes.MazeCollection()
 
 
-@app.route("/mazes", methods=["POST"])
+@app.route("/v1/mazes", methods=["POST"])
 def create_maze_endpoint():
     maze = request.json
     if not maze_collection.valid_maze(maze):
@@ -18,7 +18,7 @@ def create_maze_endpoint():
     return response
 
 
-@app.route("/mazes/<maze_id>/values", methods=["GET"])
+@app.route("/v1/mazes/<maze_id>/values", methods=["GET"])
 def search_values_endpoint(maze_id):
     maze_id = int(maze_id)
 
